@@ -12,10 +12,36 @@
         <action
             android:id="@+id/action_loginFragment2_to_menuFragment"
             app:destination="@id/menuFragment" />
+        <action
+            android:id="@+id/action_loginFragment2_to_registroFragment"
+            app:destination="@id/registroFragment" />
     </fragment>
     <fragment
         android:id="@+id/menuFragment"
         android:name="com.example.runapp.MenuFragment"
         android:label="fragment_menu"
-        tools:layout="@layout/fragment_menu" />
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_alarmasFragment"
+            app:destination="@id/alarmasFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registroFragment"
+        android:name="com.example.runapp.RegistroFragment"
+        android:label="fragment_registro"
+        tools:layout="@layout/fragment_registro" >
+        <action
+            android:id="@+id/action_registroFragment_to_loginFragment2"
+            app:destination="@id/loginFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/alarmasFragment"
+        android:name="com.example.runapp.AlarmasFragment"
+        android:label="fragment_alarmas"
+        tools:layout="@layout/fragment_alarmas" />
+    <fragment
+        android:id="@+id/crearAlarmaFragment"
+        android:name="com.example.runapp.CrearAlarmaFragment"
+        android:label="fragment_crear_alarma"
+        tools:layout="@layout/fragment_crear_alarma" />
 </navigation>

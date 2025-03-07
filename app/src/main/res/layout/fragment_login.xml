@@ -99,7 +99,7 @@
         app:srcCompat="@drawable/icon_runapp" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textInputLayout"
+        android:id="@+id/textInputNombre"
         android:layout_width="258dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="32dp"
@@ -115,7 +115,7 @@
         app:layout_constraintVertical_bias="0.56">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/userInputEditText"
+            android:id="@+id/userInputEditEmail"
             android:layout_width="match_parent"
             android:layout_height="53dp"
             android:fontFamily="@font/roboto"
