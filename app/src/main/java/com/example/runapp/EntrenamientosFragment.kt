@@ -15,10 +15,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [RegistroFragment.newInstance] factory method to
+ * Use the [EntrenamientosFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class RegistroFragment : Fragment() {
+class EntrenamientosFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -36,22 +36,20 @@ class RegistroFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val root = inflater.inflate(R.layout.fragment_registro, container, false)
-
-        val btnAlarmas = root.findViewById<Button>(R.id.buttonEnviarRegistro)
-
+        val root = inflater.inflate(R.layout.fragment_entrenamientos, container, false)
+        val btnAlarmas = root.findViewById<Button>(R.id.buttonCrearEntrenamiento)
 
         btnAlarmas.setOnClickListener {
-            val dialog = RegistroExitosoDialog()
-            dialog.show(parentFragmentManager, "RegistroExitosoDialog")
+            findNavController().navigate(R.id.action_entrenamientosFragment_to_crearEntrenamientoFragment)
         }
-        val btnVolver = root.findViewById<Button>(R.id.buttonVolver)
+
+        val btnVolver = root.findViewById<Button>(R.id.buttonVolverEntrenamientos)
         btnVolver.setOnClickListener{
-            findNavController().navigateUp()
+            findNavController().navigate(R.id.action_entrenamientosFragment_to_menuFragment)
         }
+
 
         return root
-
     }
 
     companion object {
@@ -61,12 +59,12 @@ class RegistroFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment RegistroFragment.
+         * @return A new instance of fragment EntrenamientosFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            RegistroFragment().apply {
+            EntrenamientosFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

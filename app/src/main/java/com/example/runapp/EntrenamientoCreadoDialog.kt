@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.DialogFragment
 import androidx.navigation.fragment.findNavController
 
 // TODO: Rename parameter arguments, choose names that match
@@ -15,10 +16,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [RegistroFragment.newInstance] factory method to
+ * Use the [EntrenamientoCreadoDialog.newInstance] factory method to
  * create an instance of this fragment.
  */
-class RegistroFragment : Fragment() {
+class EntrenamientoCreadoDialog : DialogFragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -36,22 +37,16 @@ class RegistroFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        val root = inflater.inflate(R.layout.fragment_registro, container, false)
+        val root = inflater.inflate(R.layout.dialog_entrenamiento_creado, container, false)
 
-        val btnAlarmas = root.findViewById<Button>(R.id.buttonEnviarRegistro)
+        val btnAlarmas = root.findViewById<Button>(R.id.buttonAceptar3)
 
 
         btnAlarmas.setOnClickListener {
-            val dialog = RegistroExitosoDialog()
-            dialog.show(parentFragmentManager, "RegistroExitosoDialog")
+            dismiss()
+            findNavController().navigate(R.id.action_crearEntrenamientoFragment_to_entrenamientosFragment)
         }
-        val btnVolver = root.findViewById<Button>(R.id.buttonVolver)
-        btnVolver.setOnClickListener{
-            findNavController().navigateUp()
-        }
-
         return root
-
     }
 
     companion object {
@@ -61,12 +56,12 @@ class RegistroFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment RegistroFragment.
+         * @return A new instance of fragment EntrenamientoCreadoDialog.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            RegistroFragment().apply {
+            EntrenamientoCreadoDialog().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

@@ -179,9 +179,13 @@
         android:id="@+id/imageView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:foregroundGravity="center"
         android:src="@drawable/google"
-        tools:layout_editor_absoluteX="155dp"
-        tools:layout_editor_absoluteY="688dp" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonEnviarRegistro"
+        app:layout_constraintVertical_bias="0.07999998" />
 
     <TextView
         android:id="@+id/textView8"
