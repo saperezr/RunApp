@@ -2,4 +2,10 @@
     <string name="app_name">RunApp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="opciones_dropdown">
+        <item>Selecccione un Entrenamiento</item>
+        <item>Opción 2</item>
+        <item>Opción 3</item>
+        <item>Opción 4</item>
+    </string-array>
 </resources>

@@ -28,9 +28,9 @@
         tools:layout_editor_absoluteY="426dp" />
 
     <Button
-        android:id="@+id/buttonVolver2"
-        android:layout_width="wrap_content"
-        android:layout_height="58dp"
+        android:id="@+id/buttonVolverCrearAlarma"
+        android:layout_width="121dp"
+        android:layout_height="48dp"
         android:layout_marginTop="25dp"
         android:backgroundTint="@color/blue2"
         android:text="Volver"
@@ -55,10 +55,10 @@
         android:textSize="46sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.12" />
+        app:layout_constraintVertical_bias="0.089" />
 
     <TextView
         android:id="@+id/textView10"
@@ -74,9 +74,8 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6"
         app:layout_constraintVertical_bias="0.0" />
 
-    <?xml version="1.0" encoding="utf-8"?>
     <LinearLayout
-        android:id="@+id/linearLayout4"
+        android:id="@+id/linearLayoutTiempoEjercicio"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -91,7 +90,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:layout_constraintVertical_bias="0.111">
+        app:layout_constraintVertical_bias="0.0">
 
         <!-- Texto de la hora -->
         <TextView
@@ -111,7 +110,8 @@
             android:orientation="horizontal">
 
             <!-- Selector de Hora -->
-            <TextView
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="80dp"
                 android:layout_height="60dp"
                 android:background="@drawable/border"
@@ -130,7 +130,7 @@
                 android:textSize="24sp" />
 
             <!-- Selector de Minutos -->
-            <TextView
+            <com.google.android.material.textfield.TextInputEditText
                 android:layout_width="80dp"
                 android:layout_height="60dp"
                 android:background="@drawable/border"
@@ -147,26 +147,41 @@
                 android:layout_marginStart="8dp"
                 android:orientation="vertical">
 
-                <TextView
+                <Button
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:background="@drawable/border"
+                    android:backgroundTint="@color/white"
+                    android:backgroundTintMode="src_in"
+                    android:fontFamily="@font/roboto"
                     android:gravity="center"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="0dp"
+                    android:paddingEnd="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="0dp"
                     android:text="AM"
+                    android:textAlignment="gravity"
                     android:textColor="@color/blue2"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="AM" />
 
-                <TextView
+                <Button
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
-                    android:background="@drawable/border"
                     android:backgroundTint="@color/material_dynamic_neutral60"
                     android:gravity="center"
+                    android:paddingLeft="0dp"
+                    android:paddingTop="0dp"
+                    android:paddingEnd="0dp"
+                    android:paddingRight="0dp"
+                    android:paddingBottom="0dp"
                     android:text="PM"
+                    android:textAlignment="gravity"
                     android:textColor="@color/blue2"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="PM" />
             </LinearLayout>
 
         </LinearLayout>
@@ -217,6 +232,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="1dp"
                     android:layout_marginBottom="10dp"
                     android:clickable="true"
                     android:contextClickable="true"
@@ -226,13 +242,13 @@
                     android:textSize="16sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/textView11"
+                    app:layout_constraintEnd_toStartOf="@+id/textViewOk"
                     app:layout_constraintHorizontal_bias="0.89"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView11"
+                    android:id="@+id/textViewOk"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -269,8 +285,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.112"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-        app:layout_constraintVertical_bias="0.143" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutTiempoEjercicio"
+        app:layout_constraintVertical_bias="0.081" />
 
     <TextView
         android:id="@+id/textView14"
@@ -283,8 +299,180 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/switch1"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
-        app:layout_constraintVertical_bias="0.114" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutTiempoEjercicio"
+        app:layout_constraintVertical_bias="0.051" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutFechaEntrenamiento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="16dp"
+        android:background="@drawable/border_linear"
+        android:backgroundTint="@color/yellow2"
+        android:clipToOutline="true"
+        android:divider="@color/blue2"
+        android:elevation="4dp"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutTiempoEjercicio"
+        app:layout_constraintVertical_bias="0.395">
+
+        <!-- Texto de la hora -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView19"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="72dp"
+                android:text="Fecha de entrenamiento"
+                android:textColor="@color/blue2"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.476" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="56dp"
+                android:layout_height="45dp"
+                android:src="@drawable/calendar"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/textView19"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Contenedor de la hora -->
+
+        <!-- Botones de acción -->
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:background="?android:attr/listDivider"
+            android:backgroundTint="@color/blue2"
+            android:backgroundTintMode="add"
+            android:visibility="visible"
+            tools:visibility="visible" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputNombre"
+            android:layout_width="258dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:fontFamily="@font/roboto"
+            android:hint="MM/dd/yyyy"
+            app:boxStrokeColor="@color/blue2"
+            app:boxStrokeWidth="3dp"
+            app:hintAnimationEnabled="true"
+            app:hintEnabled="true"
+            app:hintTextColor="@color/blue2">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/userInputEditNombre"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:drawableTint="@color/blue2"
+                android:fontFamily="@font/roboto"
+                android:inputType="textEmailAddress"
+                android:textColor="@color/blue2"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:contextClickable="true"
+                android:longClickable="true"
+                android:text="Limpiar"
+                android:textColor="@color/blue2"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textView11"
+                app:layout_constraintHorizontal_bias="0.033"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:contextClickable="true"
+                android:longClickable="true"
+                android:text="Cancelar"
+                android:textColor="@color/blue2"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textView11"
+                app:layout_constraintHorizontal_bias="0.89"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:clickable="true"
+                android:contextClickable="true"
+                android:linksClickable="true"
+                android:longClickable="true"
+                android:text="OK"
+                android:textColor="@color/blue2"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.91"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/buttonContinuar"
+        android:layout_width="240dp"
+        android:layout_height="57dp"
+        android:backgroundTint="@color/blue2"
+        android:text="Continuar"
+        android:textSize="28sp"
+        app:iconGravity="start"
+        app:iconPadding="0dp"
+        app:iconSize="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayoutFechaEntrenamiento"
+        app:layout_constraintVertical_bias="0.344" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

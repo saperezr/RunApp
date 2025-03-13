@@ -24,6 +24,12 @@
         <action
             android:id="@+id/action_menuFragment_to_alarmasFragment"
             app:destination="@id/alarmasFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_loginFragment22"
+            app:destination="@id/loginFragment2" />
+        <action
+            android:id="@+id/action_menuFragment_to_entrenamientosFragment"
+            app:destination="@id/entrenamientosFragment" />
     </fragment>
     <fragment
         android:id="@+id/registroFragment"
@@ -38,10 +44,57 @@
         android:id="@+id/alarmasFragment"
         android:name="com.example.runapp.AlarmasFragment"
         android:label="fragment_alarmas"
-        tools:layout="@layout/fragment_alarmas" />
+        tools:layout="@layout/fragment_alarmas" >
+        <action
+            android:id="@+id/action_alarmasFragment_to_crearAlarmaFragment"
+            app:destination="@id/crearAlarmaFragment" />
+    </fragment>
     <fragment
         android:id="@+id/crearAlarmaFragment"
         android:name="com.example.runapp.CrearAlarmaFragment"
         android:label="fragment_crear_alarma"
-        tools:layout="@layout/fragment_crear_alarma" />
+        tools:layout="@layout/fragment_crear_alarma" >
+        <action
+            android:id="@+id/action_crearAlarmaFragment_to_crearAlarma2Fragment"
+            app:destination="@id/crearAlarma2Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/crearAlarma2Fragment"
+        android:name="com.example.runapp.CrearAlarma2Fragment"
+        android:label="fragment_crear_alarma2"
+        tools:layout="@layout/fragment_crear_alarma2" >
+        <action
+            android:id="@+id/action_crearAlarma2Fragment_to_alarmaActivadaFragment"
+            app:destination="@id/alarmaActivadaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/alarmaActivadaFragment"
+        android:name="com.example.runapp.AlarmaActivadaFragment"
+        android:label="fragment_alarma_activada"
+        tools:layout="@layout/fragment_alarma_activada" >
+        <action
+            android:id="@+id/action_alarmaActivadaFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/entrenamientosFragment"
+        android:name="com.example.runapp.EntrenamientosFragment"
+        android:label="fragment_entrenamientos"
+        tools:layout="@layout/fragment_entrenamientos" >
+        <action
+            android:id="@+id/action_entrenamientosFragment_to_crearEntrenamientoFragment"
+            app:destination="@id/crearEntrenamientoFragment" />
+        <action
+            android:id="@+id/action_entrenamientosFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/crearEntrenamientoFragment"
+        android:name="com.example.runapp.CrearEntrenamientoFragment"
+        android:label="fragment_crear_entrenamiento"
+        tools:layout="@layout/fragment_crear_entrenamiento" >
+        <action
+            android:id="@+id/action_crearEntrenamientoFragment_to_entrenamientosFragment"
+            app:destination="@id/entrenamientosFragment" />
+    </fragment>
 </navigation>
