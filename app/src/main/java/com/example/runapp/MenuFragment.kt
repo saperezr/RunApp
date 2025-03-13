@@ -43,6 +43,17 @@ class MenuFragment : Fragment() {
         btnAlarmas.setOnClickListener{
             findNavController().navigate(R.id.action_menuFragment_to_alarmasFragment)
         }
+
+        val btnCerrarSesion = root.findViewById<Button>(R.id.buttonCerrarSesion)
+
+        btnCerrarSesion.setOnClickListener{
+            findNavController().navigate(R.id.action_menuFragment_to_loginFragment22)
+        }
+
+        val btnEntrenamientos = root.findViewById<Button>(R.id.buttonEntrenamientos)
+        btnEntrenamientos.setOnClickListener{
+            findNavController().navigate(R.id.action_menuFragment_to_entrenamientosFragment)
+        }
         return root
     }
 

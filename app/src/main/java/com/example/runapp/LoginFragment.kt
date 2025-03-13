@@ -43,6 +43,11 @@ class LoginFragment : Fragment() {
         btnLogin.setOnClickListener{
             findNavController().navigate(R.id.action_loginFragment2_to_menuFragment)
         }
+        val btnRegistro = root.findViewById<Button>(R.id.buttonRegistro)
+
+        btnRegistro.setOnClickListener{
+            findNavController().navigate(R.id.action_loginFragment2_to_registroFragment)
+        }
         return root
     }
 
